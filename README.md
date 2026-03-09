@@ -39,7 +39,7 @@ A premium, state-of-the-art E-Learning platform featuring a stunning **Glassmorp
 <p align="center">
   <img src="https://raw.githubusercontent.com/4n54n/modern-e-learn-backend/main/APP%20-%20Faces.jpg"
        alt="Mobile App"
-       width="350"
+       width="800"
        style="border-radius:12px;"/>
 </p>
 
