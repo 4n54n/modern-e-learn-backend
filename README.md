@@ -26,7 +26,6 @@ A premium, state-of-the-art E-Learning platform featuring a stunning **Glassmorp
 
 ## 📸 Screenshots
 
-*(Add your awesome screenshots below!)*
 
 ### Web Application
 
