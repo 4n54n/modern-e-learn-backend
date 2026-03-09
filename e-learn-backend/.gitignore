@@ -1,0 +1,89 @@
+# ============================================================
+# COMMITTED (Azure App Service builds from source):
+#   src/              - NestJS source code
+#   prisma/           - Prisma schema + migrations
+#   package.json      - dependencies & scripts
+#   package-lock.json - lockfile for reproducible installs
+#   tsconfig.json     - TypeScript config
+#   tsconfig.build.json
+#   nest-cli.json     - NestJS CLI build config
+#   prisma.config.ts  - Prisma custom config
+#   Dockerfile        - if using container deployment
+#   .env.example      - template (no real secrets)
+#   migrate.js / createDb.js / dropTables.js - utility scripts
+#   .prettierrc, eslint.config.mjs
+# ============================================================
+
+# ===========================
+# Dependencies (Azure installs via npm ci)
+# ===========================
+node_modules/
+
+# ===========================
+# Build Output (Azure builds via npm run build)
+# ===========================
+/dist/
+
+# ===========================
+# Environment Variables — NEVER commit real secrets
+# Use Azure App Service "Application Settings" instead
+# ===========================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*
+!.env.example
+
+# ===========================
+# Logs & Temp Debug Files
+# ===========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+npm_error.txt
+push_output.txt
+
+# ===========================
+# TypeScript Artifacts
+# ===========================
+*.tsbuildinfo
+*.js.map
+
+# ===========================
+# Testing
+# ===========================
+/coverage/
+/.nyc_output/
+
+# ===========================
+# OS & Editor
+# ===========================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.user
+*.swp
+*.swo
+
+# ===========================
+# Azure Local Config (not needed in repo)
+# GitHub Actions workflow (.github/workflows/) is NOT ignored
+# ===========================
+.azure/
+*.PublishSettings
+*.pubxml
+*.pubxml.user
+
+# ===========================
+# Security — Never commit private keys/certs
+# ===========================
+*.pem
+*.key
+*.p12
+*.pfx

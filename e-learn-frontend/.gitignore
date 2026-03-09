@@ -1,0 +1,86 @@
+# ============================================================
+# COMMITTED (Azure builds from source):
+#   src/              - Next.js app source code
+#   public/           - static assets (images, fonts, etc.)
+#   package.json      - dependencies & scripts
+#   package-lock.json - lockfile for reproducible installs
+#   tsconfig.json     - TypeScript config
+#   next.config.ts    - Next.js config
+#   postcss.config.mjs
+#   eslint.config.mjs
+#   Dockerfile        - if using container deployment
+#   .env.example      - template (no real secrets)
+# ============================================================
+
+# ===========================
+# Dependencies (Azure installs via npm ci)
+# ===========================
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# ===========================
+# Build Output (Azure builds via npm run build)
+# ===========================
+/.next/
+/out/
+/build
+
+# ===========================
+# TypeScript Artifacts
+# ===========================
+*.tsbuildinfo
+next-env.d.ts
+
+# ===========================
+# Environment Variables — NEVER commit real secrets
+# Use Azure App Service "Application Settings" instead
+# ===========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*
+!.env.example
+
+# ===========================
+# Testing
+# ===========================
+/coverage
+
+# ===========================
+# Logs
+# ===========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ===========================
+# OS & Editor
+# ===========================
+.DS_Store
+Thumbs.db
+*.pem
+*.key
+.idea/
+.vscode/
+*.suo
+*.user
+*.swp
+*.swo
+
+# ===========================
+# Azure Local Config (not needed in repo)
+# GitHub Actions workflow (.github/workflows/) is NOT ignored
+# ===========================
+.azure/
+*.PublishSettings
+*.pubxml
+*.pubxml.user

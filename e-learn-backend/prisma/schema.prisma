@@ -1,0 +1,116 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Admin {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  password_hash String
+  role          String   @default("ADMIN")
+  created_at    DateTime @default(now())
+}
+
+model Course {
+  id             String         @id @default(uuid())
+  title          String
+  description    String
+  thumbnail_url  String
+  intro_video_url String?
+  price          Float
+  original_price Float?
+  contact_number String?
+  validity_days  Int?           // null = no expiry; e.g. 90 means access expires 90 days after purchase
+  is_active      Boolean        @default(true)
+  created_at     DateTime       @default(now())
+  sections       Section[]
+  purchases      Purchase[]
+  notifications  Notification[]
+}
+
+model Section {
+  id            String   @id @default(uuid())
+  course_id     String
+  title         String
+  is_free       Boolean  @default(false)
+  order_index   Int
+  course        Course   @relation(fields: [course_id], references: [id], onDelete: Cascade)
+  lessons       Lesson[]
+}
+
+model Lesson {
+  id           String  @id @default(uuid())
+  section_id   String
+  title        String
+  description  String?
+  video_url    String?
+  document_url String?
+  order_index  Int
+  section      Section @relation(fields: [section_id], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id         String     @id @default(uuid())
+  email      String     @unique
+  name              String
+  google_id         String?    @unique
+  primary_device_id String?    // Locked device ID
+  created_at        DateTime   @default(now())
+  devices           Device[]
+  purchases  Purchase[]
+}
+
+model Device {
+  id          String   @id @default(uuid())
+  user_id     String
+  device_id   String
+  fcm_token   String
+  last_active DateTime @default(now())
+  user        User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+}
+
+model Purchase {
+  id          String    @id @default(uuid())
+  user_id     String
+  course_id   String
+  payment_id  String    @unique
+  amount_paid Float     @default(0)
+  status      String    @default("SUCCESS") // SUCCESS, PENDING, FAILED
+  expires_at  DateTime? // set at purchase time from course.validity_days; null = no expiry
+  created_at  DateTime  @default(now())
+  user        User      @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  course      Course    @relation(fields: [course_id], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id              String    @id @default(uuid())
+  course_id       String?   // used when target_audience = COURSE
+  target_audience String    @default("ALL") // ALL | COURSE | NOT_PURCHASED | EMAIL
+  target_email    String?   // used when target_audience = EMAIL
+  title           String
+  message         String
+  scheduled_at    DateTime
+  status          String    @default("PENDING") // PENDING, SENT, FAILED
+  repeat_type     String?   // null = no repeat | DAILY | WEEKLY
+  repeat_count    Int       @default(1) // total number of fires (1 = send once)
+  repeat_sent     Int       @default(0) // how many times already fired
+  created_at      DateTime  @default(now())
+  course          Course?   @relation(fields: [course_id], references: [id], onDelete: SetNull)
+}
+
+// Stores FCM tokens for users who installed the app but have not logged in yet
+model AnonymousDevice {
+  id          String   @id @default(uuid())
+  device_id   String   @unique
+  fcm_token   String
+  last_active DateTime @default(now())
+}
