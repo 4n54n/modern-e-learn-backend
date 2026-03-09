@@ -30,7 +30,7 @@ A premium, state-of-the-art E-Learning platform featuring a stunning **Glassmorp
 ### Web Application
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/4n54n/modern-e-learn-backend/main/Web%20-%20gif.gif" width="800"/>
+  <img src="https://raw.githubusercontent.com/4n54n/modern-e-learn-backend/main/Web%20-%20gif.gif" width="100%"/>
 </p>
 
 ### Mobile Application
@@ -38,7 +38,7 @@ A premium, state-of-the-art E-Learning platform featuring a stunning **Glassmorp
 <p align="center">
   <img src="https://raw.githubusercontent.com/4n54n/modern-e-learn-backend/main/APP%20-%20Faces.jpg"
        alt="Mobile App"
-       width="800"
+       width="100%"
        style="border-radius:12px;"/>
 </p>
 
