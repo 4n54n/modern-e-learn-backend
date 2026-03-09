@@ -29,17 +29,18 @@ A premium, state-of-the-art E-Learning platform featuring a stunning **Glassmorp
 *(Add your awesome screenshots below!)*
 
 ### Web Application
+
 <p align="center">
-  <!-- Replace with your actual screenshot URL/path -->
-  <img src="https://via.placeholder.com/800x450.png?text=Glassmorphism+Web+Dashboard" alt="Web Dashboard" width="800" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);"/>
+  <img src="https://raw.githubusercontent.com/4n54n/modern-e-learn-backend/main/Web%20-%20gif.gif" width="800"/>
 </p>
 
 ### Mobile Application
+
 <p align="center">
-  <!-- Replace with your actual screenshot URL/path -->
-  <img src="https://via.placeholder.com/300x600.png?text=Mobile+App+Home" alt="Mobile Home" width="300" style="margin-right: 20px; border-radius: 12px;"/>
-  <!-- Replace with your actual screenshot URL/path -->
-  <img src="https://via.placeholder.com/300x600.png?text=Secure+Course+Player" alt="Mobile Player" width="300" style="border-radius: 12px;"/>
+  <img src="https://raw.githubusercontent.com/4n54n/modern-e-learn-backend/main/APP%20-%20Faces.jpg"
+       alt="Mobile App"
+       width="350"
+       style="border-radius:12px;"/>
 </p>
 
 ---
