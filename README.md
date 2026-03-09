@@ -50,8 +50,11 @@ Interested in purchasing the complete **Mobile Application Source Code** or need
 
 📫 **Contact me directly at:** [envision.innovate@gmail.com](mailto:envision.innovate@gmail.com)
 
-Whether you need a specialized e-learning solution, additional security features (like custom DRM), or a complete white-label platform, I am available for custom project work. Let's build something amazing together!
+I am available for custom development work in:
+
+📱 Android App Development — Flutter / Native
+🌐 Web App Development — Node.js / Firebase / Full-Stack
+
+ *Let's build something amazing together!*
 
 ---
-
-*Innovating the future of digital education.*
