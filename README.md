@@ -1,9 +1,11 @@
 # 🎓 Modern E-Learning Platform
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![UI](https://img.shields.io/badge/UI-Glassmorphism-purple.svg)
-![ORM](https://img.shields.io/badge/ORM-Prisma-2D3748?logo=prisma)
-![Database](https://img.shields.io/badge/Database-PostgreSQL-336791?logo=postgresql&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?logo=prisma)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)
+![UI](https://img.shields.io/badge/UI-Glassmorphism-purple)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 
 A premium, state-of-the-art E-Learning platform featuring a stunning **Glassmorphism UI** and a highly secure mobile application ecosystem. Designed to provide an immersive, secure, and seamless educational experience.
