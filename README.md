@@ -2,7 +2,9 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![UI](https://img.shields.io/badge/UI-Glassmorphism-purple.svg)
-![Security](https://img.shields.io/badge/Security-High-red.svg)
+![ORM](https://img.shields.io/badge/ORM-Prisma-2D3748?logo=prisma)
+![Database](https://img.shields.io/badge/Database-PostgreSQL-336791?logo=postgresql&logoColor=white)
+
 
 A premium, state-of-the-art E-Learning platform featuring a stunning **Glassmorphism UI** and a highly secure mobile application ecosystem. Designed to provide an immersive, secure, and seamless educational experience.
 
